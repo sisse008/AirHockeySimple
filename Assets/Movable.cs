@@ -16,7 +16,7 @@ public abstract class Movable : MonoBehaviour
        
     }
 
-    private void Move(float horizontal_axis, float vertical_axis)
+    protected virtual void Move(float horizontal_axis, float vertical_axis)
     {
         Vector3 direction = new Vector3(horizontal_axis, vertical_axis, 0f).normalized;
 

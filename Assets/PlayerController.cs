@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : Movable
+public class PlayerController : RigidBodyMovable
 {
     
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
