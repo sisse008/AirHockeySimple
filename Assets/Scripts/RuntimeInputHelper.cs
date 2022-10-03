@@ -77,6 +77,8 @@ public class RuntimeInputHelper : MonoBehaviour
 
     public static void RegisterInputEvents(InputType.InputTypeEnum inputTypeEnum,Action<float, float> onEvent)
     {
+        if (inputTypeEnum == InputType.InputTypeEnum.None)
+            return;
         inputTypeDictionary[inputTypeEnum].action += (float x, float y) => onEvent?.Invoke(x,y) ;
     }
 
