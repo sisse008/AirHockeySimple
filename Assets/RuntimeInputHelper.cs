@@ -41,6 +41,8 @@ public class RuntimeInputHelper : MonoBehaviour
 
         public void UnregisterEvents()
         {
+            if (action == null)
+                return;
             foreach (Delegate d in action.GetInvocationList())
             {
                 action -= (AxisInputAction)d;
@@ -56,13 +58,13 @@ public class RuntimeInputHelper : MonoBehaviour
     public static Dictionary<InputType.InputTypeEnum, InputType> inputTypeDictionary { get; private set; } =
         new Dictionary<InputType.InputTypeEnum, InputType>();
 
-    private void Start()
+    private void Awake()
     {
         InputType awsd = new InputType(InputType.InputTypeEnum.ASWD, AWSDInputPressed,
             "HorizontalAWSD", "VerticalAWSD");
 
         InputType arrows = new InputType(InputType.InputTypeEnum.Arrows, ArrowsInputPressed,
-            "HorizontalArrows", "VerticalAWSD");
+            "HorizontalArrows", "VerticalArrows");
 
         InputType axis = new InputType(InputType.InputTypeEnum.Both, AxisInputPressed,
             "Horizontal", "Vertical");

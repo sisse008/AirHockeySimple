@@ -14,7 +14,7 @@ public abstract class Movable : MonoBehaviour
         me = GetComponent<Transform>();
     }
 
-    private void OnEnable()
+    private void Start()
     {
         RuntimeInputHelper.RegisterInputEvents(inputType , Move);
        
