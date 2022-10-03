@@ -7,12 +7,8 @@ public abstract class Movable : MonoBehaviour
 
     public float speed = 100f;
     public RuntimeInputHelper.InputType.InputTypeEnum inputType;
-    Transform me;
+  
 
-    private void Awake()
-    {
-        me = GetComponent<Transform>();
-    }
 
     private void Start()
     {
@@ -24,6 +20,6 @@ public abstract class Movable : MonoBehaviour
     {
         Vector3 direction = new Vector3(horizontal_axis, vertical_axis, 0f).normalized;
 
-        me.position = me.position + direction * speed * Time.deltaTime;
+        transform.position = transform.position + direction * speed * Time.deltaTime;
     }
 }

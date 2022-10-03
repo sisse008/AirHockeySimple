@@ -122,7 +122,7 @@ public class RuntimeInputHelper : MonoBehaviour
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
         foreach (InputType inputType in inputTypeDictionary.Values)
             inputType.ListerForInput();
