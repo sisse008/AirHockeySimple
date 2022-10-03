@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RigidBodyMovable : Movable
 {
-    Rigidbody2D rb;
+    protected Rigidbody2D rb;
 
     private void Awake()
     {
@@ -15,5 +15,11 @@ public class RigidBodyMovable : Movable
         Vector2 direction = new Vector3(horizontal_axis, vertical_axis).normalized;
 
         rb.MovePosition(rb.position + direction*speed*Time.deltaTime);
+    }
+
+    public override void ResetPosition()
+    {
+        transform.position = originalPosition.position;
+        rb.velocity = Vector2.zero;
     }
 }

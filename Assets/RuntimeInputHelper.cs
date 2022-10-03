@@ -14,7 +14,8 @@ public class RuntimeInputHelper : MonoBehaviour
         {
             Arrows,
             ASWD,
-            Both
+            Both,
+            None
         };
 
         InputTypeEnum type;
